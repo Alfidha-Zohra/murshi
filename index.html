@@ -75,12 +75,12 @@
 
         /* Hero Section */
         header {
-            padding: 10rem 10% 6rem 10%;
+            padding: 12rem 10% 6rem 10%;
             background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
             display: flex;
             flex-direction: column;
             justify-content: center;
-            min-height: 85vh;
+            min-height: 90vh;
         }
 
         .badge {
@@ -91,21 +91,32 @@
             font-size: 0.85rem;
             font-weight: 600;
             align-self: flex-start;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        h1 {
-            font-size: 3.5rem;
+        .hero-name {
+            font-size: 5.5rem;
             font-weight: 700;
-            letter-spacing: -1.5px;
-            line-height: 1.1;
+            letter-spacing: -3px;
+            line-height: 1.0;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -1px;
+            line-height: 1.2;
             margin-bottom: 1.5rem;
+            color: var(--text-secondary);
         }
 
         h1 span {
             color: var(--accent);
+            font-weight: 700;
         }
 
         .lead {
@@ -158,7 +169,6 @@
             font-weight: 700;
             letter-spacing: -0.5px;
             margin-bottom: 3rem;
-            position: relative;
         }
 
         /* Grid Framework */
@@ -261,8 +271,9 @@
         @media (max-width: 768px) {
             nav { padding: 1rem 5%; }
             header { padding: 8rem 5% 4rem 5%; }
+            .hero-name { font-size: 3.5rem; letter-spacing: -1.5px; }
+            h1 { font-size: 1.8rem; }
             section { padding: 4rem 5%; }
-            h1 { font-size: 2.5rem; }
             .grid-2 { grid-template-columns: 1fr; gap: 2rem; }
             .nav-links { display: none; }
         }
@@ -285,6 +296,7 @@
     <!-- Hero / Header -->
     <header>
         <div class="badge">M.Sc. Biotechnology & DMLT</div>
+        <div class="hero-name">Murshidha M</div>
         <h1>Bridging Molecular Innovation with <span>Clinical Diagnostics</span>.</h1>
         <p class="lead">Driven postgraduate researcher specializing in molecular biology, genomics, and applied laboratory sciences. Fusing precise theoretical frameworks with hands-on medical diagnostic expertise.</p>
         <div class="cta-buttons">
@@ -415,7 +427,6 @@
                 </ul>
             </div>
             <div>
-                <!-- Client-side notification handler for showcase purposes -->
                 <form id="contactForm" onsubmit="handleFormSubmit(event)" style="display: flex; flex-direction: column; gap: 1rem;">
                     <input type="text" placeholder="Your Name" required style="padding: 0.75rem; border: 1px solid var(--border); border-radius: 4px;">
                     <input type="email" placeholder="Your Email" required style="padding: 0.75rem; border: 1px solid var(--border); border-radius: 4px;">
@@ -433,14 +444,12 @@
 
     <!-- JavaScript Interactions -->
     <script>
-        // Simple Interaction Log & Message handling
         function handleFormSubmit(event) {
             event.preventDefault();
             alert("Thank you for reaching out! This message framework is ready for a backend integration.");
             event.target.reset();
         }
 
-        // Navbar opacity change on scroll
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
